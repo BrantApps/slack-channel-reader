@@ -5,7 +5,7 @@ Slack Channel Reader is a Kotlin command-line application to assist organisation
 ## Usage
 
 ```bash
-./gradlew build
+./gradlew clean fatJar
 java -jar slack-channel-reader-fat.jar <your-api-key> <days-to-look-back>
 ```
 ...the fat JAR appears to run differently to the run command issued by IDEs such as IntelliJ CE. Recommend using IntelliJ to run the program for best results (until I figure out why the fat JAR bundles differently!)
