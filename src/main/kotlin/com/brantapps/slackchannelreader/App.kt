@@ -32,7 +32,7 @@ class ChannelReader {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             val httpClient = OkHttpClient.Builder()
-            //httpClient.addInterceptor(logging)
+            // httpClient.addInterceptor(logging)
             return httpClient.build()
         }
     }
@@ -72,7 +72,7 @@ fun main(args: Array<String>) {
     csvPrinter.flush()
     csvPrinter.close()
 
-    val channelAttendenceWriter = Files.newBufferedWriter(Paths.get("channel-attendence.csv"))
+    val channelAttendenceWriter = Files.newBufferedWriter(Paths.get("channel-attendance.csv"))
     val channelAttendencePrinter = CSVPrinter(channelAttendenceWriter, CSVFormat.DEFAULT
             .withHeader(
                     "User",
