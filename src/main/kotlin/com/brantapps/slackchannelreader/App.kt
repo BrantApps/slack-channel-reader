@@ -18,6 +18,7 @@ import java.nio.file.Paths
 
 class ChannelReader {
 
+    @kotlinx.serialization.UnstableDefault
     companion object {
         private val contentType = MediaType.get("application/json")
         val retrofit: Retrofit = Retrofit.Builder()
@@ -84,7 +85,6 @@ fun main(args: Array<String>) {
     ChannelService()
             .getChannelAttendance(args[0])
             .map {
-                it
                 it.forEach { each ->
                     val values = map.get(each.key.user)
                     values?.add(each.value)
