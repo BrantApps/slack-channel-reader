@@ -37,3 +37,6 @@ The idea here is avoiding (in the worse case) the scenario where everyone is abl
 Plot this data using a grouped histogram in buckets you feel are useful. Following on from the example that "more channels with fewer people is better" (debatable depending on your org structure) then this kind of plot will show whether your company is adopting the strategy by shifting the mean to the right and reducing the standard deviation (the spread).
 
 ![Histogram Chart](/docs/images/histogram-grouped.png)
+
+## Related Reading
+https://slackhq.com/advice-for-large-teams-on-slack
