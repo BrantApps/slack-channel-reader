@@ -7,3 +7,6 @@ out
 
 # IntelliJ
 .idea
+
+# Mac Rubbish
+*.DS_Store
