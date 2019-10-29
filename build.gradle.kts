@@ -1,3 +1,5 @@
+import org.gradle.jvm.tasks.Jar
+
 plugins {
     id("kotlinx-serialization") version "1.3.11"
     id("org.jetbrains.kotlin.jvm").version("1.3.21")
@@ -24,4 +26,21 @@ dependencies {
 
 application {
     mainClassName = "com.brantapps.slackchannelreader.AppKt"
+}
+
+val fatJar = task("fatJar", type = Jar::class) {
+    baseName = "${project.name}-fat"
+    manifest {
+        attributes["Implementation-Title"] = "Gradle Jar File Example"
+        attributes["Implementation-Version"] = archiveVersion
+        attributes["Main-Class"] = "com.brantapps.slackchannelreader.AppKt"
+    }
+    from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) it else zipTree(it) }))
+    with(tasks.jar.get() as CopySpec)
+}
+
+tasks {
+    "build" {
+        dependsOn(fatJar)
+    }
 }
