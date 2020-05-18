@@ -15,8 +15,8 @@ java -jar slack-channel-reader-fat.jar <your-api-key> <days-to-look-back>
 Suggested plots include a bubble chart of the `active-slack-channels` CSV;
  
 1. x-axis to represent the channel create date
-2. y-axis be the number of messages sent in a channel over the period specified in `<days-to-look-back>`
-3. bubble size be the number of members
+2. y-axis be the number of channel members
+3. bubble size to indicate the number of messages over the period specified in `<days-to-look-back>`
 
 Watch out for;
 
