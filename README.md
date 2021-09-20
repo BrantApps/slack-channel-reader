@@ -6,11 +6,12 @@ Slack Channel Reader is a Kotlin command-line application to assist organisation
 
 ```bash
 ./gradlew clean fatJar
-java -jar slack-channel-reader-fat.jar <your-api-key> <days-to-look-back>
+java -jar slack-channel-reader-fat.jar channel-viz <your-api-key> <days-to-look-back>
+java -jar slack-channel-reader-fat.jar dump-popular-messages <your-api-key> <channel-name> <days-to-look-back> <min-number-of-reactions>
 ```
 ...the fat JAR appears to run differently to the run command issued by IDEs such as IntelliJ CE. Recommend using IntelliJ to run the program for best results (until I figure out why the fat JAR bundles differently!)
 
-## Interpreting the results
+## "Channel Viz" Interpreting the results
 
 Suggested plots include a bubble chart of the `active-slack-channels` CSV;
  

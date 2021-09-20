@@ -1,11 +1,26 @@
 package com.brantapps.slackchannelreader
 
-@kotlinx.serialization.Serializable
-data class MessagesItem(val clientMsgId: String = "")
+import kotlinx.serialization.Optional
 
 @kotlinx.serialization.Serializable
-data class History(val messages: List<MessagesItem>?,
-                   val hasMore: Boolean = false,
+data class MessagesItem(@Optional val clientMsgId: String = "",
+                        val text: String,
+                        val user: String,
+                        val ts: String,
+                        @Optional val reactions: List<Reaction>? = null)
+
+@kotlinx.serialization.Serializable
+data class Reaction(val name: String,
+                    val users: List<String>,
+                    val count: Int)
+
+@kotlinx.serialization.Serializable
+data class History(@Optional val messages: List<MessagesItem>? = null,
+                   @Optional val has_more: Boolean = false,
+                   @Optional val response_metadata: ResponseMetadata? = null,
                    val ok: Boolean = false)
+
+@kotlinx.serialization.Serializable
+data class ResponseMetadata(@Optional val next_cursor: String? = null)
 
 

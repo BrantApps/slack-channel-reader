@@ -1,7 +1,9 @@
 package com.brantapps.slackchannelreader
 
+import kotlinx.serialization.Optional
+
 @kotlinx.serialization.Serializable
-data class User(val tz: String = "",
+data class User(@Optional val tz: String = "",
                 val profile: Profile)
 
 

@@ -10,3 +10,6 @@ out
 
 # Mac Rubbish
 *.DS_Store
+
+# local script
+run.sh
